@@ -1,7 +1,7 @@
 # Traffic Sign Recognition Program
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
-This repo contains code for images of traffic sign classification from German Traffic Sign Database GTSRB. Originally, it was the task of the second project from Udacity Self-Driving Car Engineer Nanodegree, but now there are some my independent experiments added. The train dataset consists of 39209 images with 32x32 px resolution, test dataset - 12630. The datasets were provided by Udacity Program.
+This repo contains code for images of traffic sign classification from German Traffic Sign Database GTSRB. Originally, it is the task of the second project from Udacity Self-Driving Car Engineer Nanodegree, The train dataset consists of 39209 images with 32x32 px resolution, test dataset - 12630. The datasets were provided by Udacity Program.
 
 The Project
 ---
