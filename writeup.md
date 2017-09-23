@@ -60,7 +60,7 @@ Number of classes = 43
 
 ### Design and Test a Model Architecture : 
 
-#### 1. Pre processing
+#### 1. Describe how, and identify where in your code, you preprocessed the image data. What tecniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
  * The class images were normalized and grayscaled using the basic statistic tools, to ease the training and create uniformity through out the classes.
 
   ![processed Image grid](./images/writeup/pro_image_grid.png)
@@ -78,20 +78,22 @@ My final model consisted of the following layers:
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
 | Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
 | Max pooling	      	| Input = 28x28x32. Output = 14x14x32.
- 				|
 
  
 
 
-#### 3. How Was The Model Trained
+#### 3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+
+The architecture is deep CNN inspired by two existing architectures: LeNet and Ciresan's paper[3]. Its number and types of layers come from LeNet, but the huge number of filters in c layers came for Ciresan, causing the training and predition to be much faster.
+
+#### 4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
   * The LeNet-5 CNN from the course was implemented with the hyperparameters `mu = 0` and `sigma = 0.1`.
   * The initial `learning_rate = 0.001`, the `batch_size = 128 image`, model was trained for `12 epochs`.
   * TensorFlow design functions were used to train, validate and test the model architecture, training was done through the Adam optimizer.
 
-#### 4. Approach Taken
+#### 5.Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
 * training set accuracy of 99.8
@@ -128,7 +130,7 @@ No Vehicles	      		| No Vehicles					 				|
 
 The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%.
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 You can find these information in the [html notebook](./Traffic_Sign_Classifier.html) in the [source code](./)
 
