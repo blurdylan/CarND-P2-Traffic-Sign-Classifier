@@ -128,7 +128,7 @@ No Vehicles	      		| No Vehicles					 				|
 | Children Crossing			| Children Crossing      							|
 
 
-The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%.
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%, but a detailed description can be found in section 3 below. this is not inline with the test results obtained from the model but this is because the 5 images choosen for the tests were really clear and of an acceptable resolution. To reflect the results I have to use worse images than the five choosen.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
@@ -148,7 +148,7 @@ For the first image, the model is 100% sure that this is a 30kmph speed limit, T
 0.0000 Speed limit (80km/h)
 
 ----------
-For the second image, The top five soft max probabilities were:
+For the second image, the model is 93.43% sure that this is a 60kmph speed limit, The top five soft max probabilities were:
 
 ----------
 0.9343 Speed limit (60km/h)
@@ -162,7 +162,7 @@ For the second image, The top five soft max probabilities were:
 0.0000 Speed limit (120km/h)
 
 ----------
-For the third image, The top five soft max probabilities were:
+For the third image, the model is 100% sure that this is a keep right limit, The top five soft max probabilities were:
 
 ----------
 1.0000 Keep right
@@ -176,7 +176,7 @@ For the third image, The top five soft max probabilities were:
 0.0000 Speed limit (80km/h)
 
 ----------
-For the fourth image, The top five soft max probabilities were:
+For the fourth image, the model is 40.49% sure that this is a keep right sign, The top five soft max probabilities were:
 
 ----------
 0.4049 No vehicles
@@ -190,7 +190,7 @@ For the fourth image, The top five soft max probabilities were:
 0.0466 Turn right ahead
 
 ----------
-For the fifth image, The top five soft max probabilities were:
+For the fifth image, the model is 100% sure that this is a 30kmph children crossing, The top five soft max probabilities were:
 
 ----------
 1.0000 Children crossing
@@ -202,6 +202,9 @@ For the fifth image, The top five soft max probabilities were:
 0.0000 Dangerous curve to the right
 
 0.0000 Beware of ice/snow
+
+-----------
+> The visualization (bar-charts) for the data above can be found in the [html file](./Traffic_Sign_Classifier - output.html) submitted with this
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
