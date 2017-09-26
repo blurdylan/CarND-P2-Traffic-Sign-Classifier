@@ -150,61 +150,49 @@ For the first image, the model is 100% sure that this is a 30kmph speed limit, T
 ----------
 For the second image, the model is 93.43% sure that this is a 60kmph speed limit, The top five soft max probabilities were:
 
-----------
-0.9343 Speed limit (60km/h)
-
-0.0654 Speed limit (80km/h)
-
-0.0003 Speed limit (50km/h)
-
-0.0000 Speed limit (30km/h)
-
-0.0000 Speed limit (120km/h)
+Probability|Traffic sign
+-------|------
+0.9343 | Speed limit (60km/h)
+0.0654 | Speed limit (80km/h)
+0.0003 |Speed limit (50km/h)
+0.0000 |Speed limit (30km/h)
+0.0000 |Speed limit (120km/h)
 
 ----------
 For the third image, the model is 100% sure that this is a keep right limit, The top five soft max probabilities were:
 
-----------
-1.0000 Keep right
-
-0.0000 Turn left ahead
-
-0.0000 Priority road
-
-0.0000 Beware of ice/snow
-
-0.0000 Speed limit (80km/h)
+Probability|Traffic sign
+-------|------
+1.0000| Keep right
+0.0000| Turn left ahead
+0.0000 |Priority road
+0.0000 |Beware of ice/snow
+0.0000 |Speed limit (80km/h)
 
 ----------
 For the fourth image, the model is 40.49% sure that this is a keep right sign, The top five soft max probabilities were:
 
-----------
-0.4049 No vehicles
-
-0.1455 Keep left
-
-0.0929 Speed limit (70km/h)
-
-0.0783 No passing
-
-0.0466 Turn right ahead
+Probability|Traffic sign
+-------|------
+0.4049 |No vehicles
+0.1455 |Keep left
+0.0929 |Speed limit (70km/h)
+0.0783 |No passing
+0.0466 |Turn right ahead
 
 ----------
 For the fifth image, the model is 100% sure that this is a 30kmph children crossing, The top five soft max probabilities were:
 
-----------
-1.0000 Children crossing
-
-0.0000 Bicycles crossing
-
-0.0000 Right-of-way at the next intersection
-
-0.0000 Dangerous curve to the right
-
-0.0000 Beware of ice/snow
+Probability|Traffic sign
+-------|------
+1.0000| Children crossing
+0.0000| Bicycles crossing
+0.0000| Right-of-way at the next intersection
+0.0000 |Dangerous curve to the right
+0.0000 |Beware of ice/snow
 
 -----------
-> The visualization (bar-charts) for the data above can be found in the [html file](./Traffic_Sign_Classifier - output.html) submitted with this
+> The visualization (bar-charts) for the data above can be found in the [html file](./Traffic_Sign_Classifier.html) submitted with this
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
