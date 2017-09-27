@@ -65,27 +65,52 @@ Number of classes = 43
 
   ![processed Image grid](./images/writeup/pro_image_grid.png)
 
-  * The data was augmented through distortion and the augmented data was stored, this is done to help the training.
-  
+#### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+
+The data already comes in three parts: training, validation and test set.
+
+The sixth code cell of the IPython notebook contains the code for augmenting the data set.
+
+I have tried several methods of data augmentation but none have made the validation accuracy significantly better, some even made it a little bit worse. However I understood the importance of data augmentation when I first tried the model on some images from the web. The accuracy without data augmentation was as low as 20%. Maybe because the images had different rotation, position or size than in the original dataset. Introducing data augmentation boosted the new image accuracy to 75%.
+
+My data augmentation method is as simple as adding 2 distorted versions of each training image to the training set. Distortion means a random rotation ([-5; -5] degrees), random scale ([0.9; 1.1]) and random translation ([-3; 3] pixels horizontally and vertically).
+
+After distortion some pixels of the image would remain without data. I filled those pixels with 'edge' padding.
+
+My final training set had 104397 images. My validation set and test set had 4410 and 12630 images.
+
   ![Undistorted](./images/writeup/undistorted.png)
   ![Undistorted](./images/writeup/distorted.png)
 
-#### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### 3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+
+The architecture is deep CNN inspired by two existing architectures: LeNet and Ciresan's paper. Its number and types of layers come from LeNet, but the huge number of filters in c layers came for Ciresan, causing the training and predition to be much faster.
+
+![Network](./images/writeup/network.png)
 
 My final model consisted of the following layers:
 
-| Layer         		|     Description	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| Max pooling	      	| Input = 28x28x32. Output = 14x14x32.
+```
+Layer 1: Convolutional (5x5x1x32) Input = 32x32x1. Output = 28x28x32.
+Relu activation.
+Pooling. Input = 28x28x32. Output = 14x14x32.
 
- 
+Layer 2: Convolutional (5x5x32x64) Input = 14x14x32. Output = 10x10x64.
+Relu activation.
+Pooling. Input = 10x10x64. Output = 5x5x64.
+Flatten. Input = 5x5x64. Output = 1600.
+Dropout 0.7.
 
+Layer 3: Fully Connected. Input = 1875. Output = 120.
+Relu activation.
+Dropout 0.7.
 
-#### 3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+Layer 4: Fully Connected. Input = 120. Output = 84.
+Relu activation.
+Dropout 0.7.
 
-The architecture is deep CNN inspired by two existing architectures: LeNet and Ciresan's paper[3]. Its number and types of layers come from LeNet, but the huge number of filters in c layers came for Ciresan, causing the training and predition to be much faster.
+Layer 5: Fully Connected. Input = 84. Output = 43.
+```
 
 #### 4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
@@ -136,16 +161,13 @@ You can find these information in the [html notebook](./Traffic_Sign_Classifier.
 
 For the first image, the model is 100% sure that this is a 30kmph speed limit, The top five soft max probabilities were
 
-----------
-1.0000 Speed limit (30km/h)
-
-0.0000 Speed limit (20km/h)
-
-0.0000 Speed limit (50km/h)
-
-0.0000 Speed limit (70km/h)
-
-0.0000 Speed limit (80km/h)
+Probability|Traffic sign
+-------|------
+1.0000| Speed limit (30km/h)
+0.0000| Speed limit (20km/h)
+0.0000| Speed limit (50km/h)
+0.0000| Speed limit (70km/h)
+0.0000| Speed limit (80km/h)
 
 ----------
 For the second image, the model is 93.43% sure that this is a 60kmph speed limit, The top five soft max probabilities were:
